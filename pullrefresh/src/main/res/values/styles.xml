@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PullToRefresh">
+        <item name="ptrAnimationStyle">ring</item>
+        <item name="cpvStartColor">#000000</item>
+        <item name="cpvStrokeWidth">6.0</item>
+        <item name="ptrHeaderTextColorStart">#000000</item>
+        <item name="ptrShowIndicator">false</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_common"
+    android:id="@+id/llAddCity">"
+    <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#8B1A1A"/>
+</LinearLayout>

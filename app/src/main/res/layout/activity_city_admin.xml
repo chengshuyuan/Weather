@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.csy.weather.view.activity.CityAdminActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/red">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_font_title"
+            android:text="@string/title_activity_city_admin"/>
+        <ImageButton
+            android:id="@+id/ibtnAddCity"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/icon_add"/>
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridview_cityAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:layout_marginTop="@dimen/size_margin"
+        android:layout_marginLeft="@dimen/size_margin"
+        android:layout_marginRight="@dimen/size_margin"
+        android:gravity="center_horizontal"
+        android:scrollbars="none"
+        android:numColumns="2"/>
+
+</LinearLayout>

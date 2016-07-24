@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/id_main_title"
+   	   android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:orientation="horizontal">
+       <ImageButton  
+       	 	android:id="@+id/imagebtn_settting"
+        	android:layout_width="50dp"
+        	android:layout_height="50dp"
+        	android:layout_centerVertical="true"  
+        	android:layout_marginLeft="10dp"
+        	android:background="@drawable/selector_btn_setting" />
+
+	   <TextView
+		   android:id="@+id/textview_cityame"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:layout_centerInParent="true"
+		   android:textSize="18sp"
+		   android:textColor="#ffffffff"
+		   android:text="北京"/>
+
+     	<ImageButton  
+        	android:id="@+id/imagebtn_cityAdmin"
+        	android:layout_width="50dp"
+        	android:layout_height="50dp"
+        	android:layout_alignParentRight="true"
+        	android:layout_centerVertical="true" 
+        	android:layout_marginRight="3dp"  
+        	android:background="@drawable/selector_btn_cities" />
+    </RelativeLayout>
