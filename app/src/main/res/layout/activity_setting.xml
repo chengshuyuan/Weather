@@ -18,35 +18,9 @@
             android:text="@string/title_activity_setting"/>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/rlBgSetting"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="@dimen/size_margin"
-        android:layout_marginRight="@dimen/size_margin">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:textSize="@dimen/size_font_sub"
-            android:textColor="@color/black"
-            android:text="背景设置"/>
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/selector_right_arrow"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray"
-        android:layout_marginLeft="@dimen/size_margin"
-        android:layout_marginRight="@dimen/size_margin"/>
 
     <RelativeLayout
+        android:id="@+id/layoutCityAdmin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="@dimen/size_margin"
@@ -74,6 +48,7 @@
         android:layout_marginRight="@dimen/size_margin"/>
 
     <RelativeLayout
+        android:id="@+id/layoutHelp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="@dimen/size_margin"
@@ -101,6 +76,7 @@
         android:layout_marginRight="@dimen/size_margin"/>
 
     <RelativeLayout
+        android:id="@+id/layoutVersion"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="@dimen/size_margin"
@@ -128,6 +104,7 @@
         android:layout_marginRight="@dimen/size_margin"/>
 
     <RelativeLayout
+        android:id="@+id/layoutAuthor"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="@dimen/size_margin"

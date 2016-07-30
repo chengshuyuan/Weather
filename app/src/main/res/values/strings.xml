@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">元元天气</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -13,5 +13,8 @@
     <string name="hint_input_name">请输入城市名</string>
     <string name="title_activity_more_weather_info">MoreWeatherInfoActivity</string>
     <string name="title_activity_setting">设置</string>
+    <string name="title_activity_help">帮助</string>
+    <string name="title_activity_author">关于作者</string>
+    <string name="title_activity_version">版本</string>
 
 </resources>
