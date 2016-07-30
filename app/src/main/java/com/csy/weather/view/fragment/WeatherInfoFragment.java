@@ -62,6 +62,7 @@ public class WeatherInfoFragment  extends BaseFragment implements IWeatherInfoFr
     private String cityName;
     private IMainActivity activity;
     private boolean isCreated = false;
+    private String aqi;
 
     public WeatherInfoFragment(String cityName){
         this.cityName = cityName;
@@ -98,26 +99,28 @@ public class WeatherInfoFragment  extends BaseFragment implements IWeatherInfoFr
         pullRefreshScrollView = (PullToRefreshScrollView)findView(R.id.scrollview_fragment_weather);
         pullRefreshScrollView.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
 
-        moreButton = (Button)findView(R.id.button_more);
-        temperatureText = (TextView)findView(R.id.textview_temperature);
-        weatherText = (TextView)findView(R.id.textview_weather);
-        weatherImage = (ImageView)findView(R.id.imageview_weather);
+        moreButton = findView(R.id.button_more);
+        temperatureText = findView(R.id.textview_temperature);
+        weatherText = findView(R.id.textview_weather);
+        weatherImage = findView(R.id.imageview_weather);
 
-        updateTimeText = (TextView)findView(R.id.textview_updatetime);
-        dateText = (TextView)findView(R.id.textview_date);
-        humidityText = (TextView)findView(R.id.textview_humidity);
-        windText = (TextView)findView(R.id.textview_wind);
-        temperatureRangeText = (TextView)findView(R.id.textview_temperatureRange);
-        suntimeText = (TextView)findView(R.id.textview_suntime);
-        forecastGridView = (GridView)findView(R.id.gridview_forecast);
-        umbrellaValueText = (TextView)findView(R.id.textview_umbrella_value);
-        umbrellaDetailText = (TextView)findView(R.id.textview_umbrell_detail);
-        zhishuGridView = (MyGridView)findView(R.id.gridview_zhishu);
+        updateTimeText = findView(R.id.textview_updatetime);
+        dateText = findView(R.id.textview_date);
+        humidityText = findView(R.id.textview_humidity);
+        windText = findView(R.id.textview_wind);
+        temperatureRangeText = findView(R.id.textview_temperatureRange);
+        suntimeText = findView(R.id.textview_suntime);
+        forecastGridView = findView(R.id.gridview_forecast);
+        umbrellaValueText = findView(R.id.textview_umbrella_value);
+        umbrellaDetailText = findView(R.id.textview_umbrell_detail);
+        zhishuGridView = findView(R.id.gridview_zhishu);
         LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams((int) (Constant.displayWidth * 2.0f + 0.5f), LinearLayout.LayoutParams.WRAP_CONTENT);
         forecastGridView.setLayoutParams(param1);
         LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams((int) (Constant.displayWidth * 1.0f + 0.5f), LinearLayout.LayoutParams.WRAP_CONTENT);
         zhishuGridView.setLayoutParams(param2);
     }
+
+
 
     private void initAction(){
         pullRefreshScrollView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ScrollView>() {
@@ -175,7 +178,7 @@ public class WeatherInfoFragment  extends BaseFragment implements IWeatherInfoFr
         moreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.jumpToMoreWeatherInfoActivity();
+                activity.jumpToMoreWeatherInfoActivity(aqi);
             }
         });
     }
@@ -197,19 +200,31 @@ public class WeatherInfoFragment  extends BaseFragment implements IWeatherInfoFr
         zhishuInfos = weatherInfo.getZhishuInfos();
         forecastWeatherInfo = forecasetInfos.get(0);
         zhishuInfo = zhishuInfos.get(10);
+        moreButton.setText(todayWeatherInfo.getAqi());
+        setBackgroud(todayWeatherInfo.getAqi());
+        aqi = todayWeatherInfo.getAqi();
         temperatureText.setText(todayWeatherInfo.getTemperature());
         weatherImage.setBackgroundResource(ImageResource.getWeatherBitMapResource(forecastWeatherInfo.getWeatherType()));
         weatherText.setText(forecastWeatherInfo.getWeatherType());
         updateTimeText.setText("" + todayWeatherInfo.getUpdateTime());
         dateText.setText( forecastWeatherInfo.getDate());
         humidityText.setText( todayWeatherInfo.getHumidity());
-        windText.setText("风：" + todayWeatherInfo.getWindDirection() + "," + todayWeatherInfo.getWindVelocity());
+        windText.setText(todayWeatherInfo.getWindDirection() + "," + todayWeatherInfo.getWindVelocity());
         temperatureRangeText.setText(forecastWeatherInfo.getLowTem() + "~" + forecastWeatherInfo.getHighTem());
         suntimeText.setText(todayWeatherInfo.getSunRise() + "~" + todayWeatherInfo.getSunSet());
         forecastGridView.setAdapter(new ForecastGridAdapter(getActivity(), forecasetInfos));
         umbrellaValueText.setText(zhishuInfo.getValue());
         umbrellaDetailText.setText(zhishuInfo.getDescription());
         zhishuGridView.setAdapter(new ZhishuGridAdapter(getActivity(), zhishuInfos));
+    }
+
+    private void setBackgroud(String aqiStr){
+        int aqi = Integer.valueOf(aqiStr);
+        if(aqi > 50 && aqi < 150){
+            moreButton.setBackgroundResource(R.drawable.drawable_btn_more_1);
+        }else if(aqi >= 150){
+            moreButton.setBackgroundResource(R.drawable.drawable_btn_more_2);
+        }
     }
 
     @Override

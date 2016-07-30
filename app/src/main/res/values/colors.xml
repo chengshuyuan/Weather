@@ -8,5 +8,6 @@
     <color name="red">#f8513f</color>
     <color name="bg_title">#7f000000</color>
     <color name="bg_common">#E0E0E0</color>
+    <color name="gray">#E0E0E0</color>
 
 </resources>

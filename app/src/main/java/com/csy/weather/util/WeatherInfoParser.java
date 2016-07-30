@@ -43,6 +43,11 @@ public class WeatherInfoParser {
 						todayWeatherInfo.setSunRise(parser.nextText());
 					}else if("sunset_1".equals(parser.getName())){
 						todayWeatherInfo.setSunSet(parser.nextText());
+					}else if("environment".equals(parser.getName())){
+						eventType = parser.next();
+						if("aqi".equals(parser.getName())){
+							todayWeatherInfo.setAqi(parser.nextText());
+						}
 					}else if("weather".equals(parser.getName())){
 						forecastWeatherInfo = new ForecastWeatherInfo();
 						eventType = parser.next();

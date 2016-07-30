@@ -67,6 +67,10 @@
             android:name=".view.activity.MoreWeatherInfoActivity"
             android:label="@string/title_activity_more_weather_info" >
         </activity>
+        <activity
+            android:name=".view.activity.SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
     </application>
 
 </manifest>

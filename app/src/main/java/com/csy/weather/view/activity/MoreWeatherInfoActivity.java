@@ -2,6 +2,7 @@ package com.csy.weather.view.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -36,6 +37,8 @@ public class MoreWeatherInfoActivity extends BaseActivity implements BDLocationL
     public String myDistrict, myCity, myAddress;
     public MoreWeatherInfoActivityPresenter presenter;
     private HashMap<Integer, Double> dataMap  = new HashMap<Integer, Double>();
+    private String aqi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,16 @@ public class MoreWeatherInfoActivity extends BaseActivity implements BDLocationL
         setContentView(R.layout.activity_more_weather_info);
         locationUtil = new LocationUtil(this);
         presenter = new MoreWeatherInfoActivityPresenter(this);
+        aqi = getIntent().getStringExtra("aqi");
         initView();
+        if(!TextUtils.isEmpty(aqi)){
+            updateAirInfo(Integer.valueOf(aqi));
+        }
         locationUtil.start();
     }
 
     private void initView(){
         etAddress = findView(R.id.etAddress);
-        //chartNextHour = findView(R.id.chartNextHour);
         llAirInfo = findView(R.id.llAirInfo);
         llNextHourInfo = findView(R.id.llNextHourInfo);
         tvNextHourInfo = findView(R.id.tvNextHourInfo);

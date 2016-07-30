@@ -12,5 +12,6 @@
     <string name="title_activity_add_city">AddCityActivity</string>
     <string name="hint_input_name">请输入城市名</string>
     <string name="title_activity_more_weather_info">MoreWeatherInfoActivity</string>
+    <string name="title_activity_setting">设置</string>
 
 </resources>

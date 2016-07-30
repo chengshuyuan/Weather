@@ -16,6 +16,7 @@ import com.csy.weather.R;
 import com.csy.weather.adapter.CityWeatherViewPagerAdater;
 import com.csy.weather.common.BaseActivity;
 import com.csy.weather.domin.Constant;
+import com.csy.weather.domin.WeatherInfo;
 import com.csy.weather.presenter.MainActivityPresenter;
 import com.csy.weather.util.AppLog;
 import com.csy.weather.util.ImageResource;
@@ -97,7 +98,7 @@ public class MainActivity extends BaseActivity implements IMainActivity {
         settingImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                JumpUtil.jumpToSettingActivity(MainActivity.this);
             }
         });
 
@@ -149,7 +150,7 @@ public class MainActivity extends BaseActivity implements IMainActivity {
     }
 
     @Override
-    public void jumpToMoreWeatherInfoActivity() {
-        JumpUtil.jumpToMoreWeatherInfoActivity(this);
+    public void jumpToMoreWeatherInfoActivity(String aqi) {
+        JumpUtil.jumpToMoreWeatherInfoActivity(this, aqi);
     }
 }

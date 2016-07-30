@@ -11,5 +11,5 @@ public interface IMainActivity {
 
     public void setBackground(String weatherType);
 
-    public void jumpToMoreWeatherInfoActivity();
+    public void jumpToMoreWeatherInfoActivity(String aqi);
 }

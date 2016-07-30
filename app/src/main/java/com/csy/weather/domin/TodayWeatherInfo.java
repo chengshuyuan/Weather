@@ -10,8 +10,16 @@ public class TodayWeatherInfo implements Serializable{
 	String Humidity;
 	String sunRise;
 	String sunSet;
-	
-	
+	String aqi;
+
+	public String getAqi() {
+		return aqi;
+	}
+
+	public void setAqi(String aqi) {
+		this.aqi = aqi;
+	}
+
 	public String getUpdateTime() {
 		return updateTime;
 	}
